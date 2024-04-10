@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:51:28 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/10 11:28:11 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/10 09:43:05 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/10 09:45:22 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memset(void *str, int c, size_t n)
+int	ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)str)[i] = (unsigned char)c;
-		i++;
-	}
-	return (str);
+    
 }

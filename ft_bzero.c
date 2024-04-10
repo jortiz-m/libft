@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:51:28 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/10 11:28:11 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/10 09:20:59 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/10 12:56:19 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memset(void *str, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)str)[i] = (unsigned char)c;
+		((unsigned char *)s)[i] = 0;
 		i++;
 	}
-	return (str);
 }
+
+/*
+int main()
+{
+	printf("el resultado de mi función es: ")
+}*/
