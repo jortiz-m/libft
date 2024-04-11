@@ -6,13 +6,13 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:38:31 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/09 12:41:22 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/11 10:49:04 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_ascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

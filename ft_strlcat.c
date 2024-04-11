@@ -1,23 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:45:26 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/11 11:33:50 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/10 09:50:09 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/11 13:27:25 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	c;
+	size_t		i;
+	size_t		c;
 
+	i = 0;
 	c = 0;
-	while (str[c] != '\0')
+
+	while (concat[i] != '\0')
+	{
+		i++;
+	}
+	i++;
+	while (((i + c) < dstsize - 1) && (src[c] != '\0'))
+	{
+		dst[i + c] = src[c];
 		c++;
-	return (c);
+	}
+	dst[i + c] = '\0';
+	return (i + c);
+}
+int main()
+{
+	char		*dst;
+	const char 	*src;
+	size_t 		dstsize;
+
+	dst = "hola";
+	src = "cawita";
+	dstsize = 28;
+
+	printf("%i",ft_strlcat(dst, src, dstsize));
+	return(0);
 }

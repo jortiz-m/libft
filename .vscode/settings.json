@@ -1,4 +1,9 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "libft.h": "c",
+        "ctype.h": "c",
+        "stdio.h": "c"
+    }
 }
