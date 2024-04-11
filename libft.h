@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/11 12:11:27 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:45:10 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,16 @@ int	ft_isprint(int c);
  * @return int 
  */
 int	ft_strlen(const char *str);
+/**
+ * @brief 
+ * 
+ * @param dst 
+ * @param src 
+ * @param dstsize 
+ * @return int 
+ */
+int	ft_strlcat(char *dst, const char *src, size_t dstsize);
+
 
 
 
