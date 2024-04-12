@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/11 13:45:10 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:14:32 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <ctype.h>
 # include <string.h>
 # include <xlocale.h>
+# include <stddef.h>
+# include <stddef.h>
 
 /**
  * @brief 
@@ -25,53 +27,114 @@
  * @param c 
  * @return int 
  */
-int	ft_isalpha(int c);
+int		ft_isalpha(int c);
 /**
  * @brief 
  * 
  * @param c 
  * @return int 
  */
-int	ft_isdigit(int c);
+int		ft_isdigit(int c);
 /**
  * @brief 
  * 
  * @param c 
  * @return int 
  */
-int	ft_isalnum(int c);
+int		ft_isalnum(int c);
 /**
  * @brief 
  * 
  * @param c 
  * @return int 
  */
-int	ft_isascii(int c);
+int		ft_isascii(int c);
 /**
  * @brief 
  * 
  * @param c 
  * @return int 
  */
-int	ft_isprint(int c);
+int		ft_isprint(int c);
 /**
  * @brief 
  * 
  * @param str 
  * @return int 
  */
-int	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @param c 
+ * @param len 
+ */
+void	*ft_memset(void *str, int c, size_t len);
+/**
+ * @brief 
+ * 
+ * @param s 
+ * @param n 
+ */
+void	ft_bzero(void *s, size_t n);
+memcpy
+/**
+ * @brief 
+ * 
+ * @param dst 
+ * @param src 
+ * @param len 
+ * @return void* 
+ */
+void	*ft_memmove(void *dst, const void *src, size_t len);
 /**
  * @brief 
  * 
  * @param dst 
  * @param src 
  * @param dstsize 
+ * @return size_t 
+ */
+size_t	ft_stlcpy(char *dst, const char *src, size_t dstsize);
+/**
+ * @brief 
+ * 
+ * @param dst 
+ * @param src 
+ * @param n 
+ * @return size_t 
+ */
+size_t	ft_strlcat(char *dst, const char *src, size_t n);
+/**
+ * @brief 
+ * 
+ * @param c 
  * @return int 
  */
-int	ft_strlcat(char *dst, const char *src, size_t dstsize);
-
-
-
+int		ft_tuopper(int c);
+/**
+ * @brief 
+ * 
+ * @param c 
+ * @return int 
+ */
+int		ft_tolower(int c);
+/**
+ * @brief 
+ * 
+ * @param s 
+ * @param c 
+ * @return char* 
+ */
+char	*ft_strchr(const char *s, int c);
+/**
+ * @brief 
+ * 
+ * @param s 
+ * @param c 
+ * @return char* 
+ */
+char	*ft_strrchr(const char *s, int c);
 
 #endif

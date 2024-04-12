@@ -6,52 +6,28 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 09:50:09 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/11 13:57:24 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/12 11:37:51 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	int	c;
-
-	c = 0;
-	while (str[c] != '\0')
-		c++;
-	return (c);
-}
-
-int	ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	size_t		i;
-	size_t		c;
+	size_t	i;
+	size_t	lendst;
+	size_t	lensrc;
 
 	i = 0;
-	c = 0;
-	while (dst[i] != '\0')
-		i++;
-	if ((dstsize - i) > 0)
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
+	if (lendst > n)
+		return (n + lensrc);
+	while ((src[i] != '\0') && ((i + lendst) < (n - 1)))
 	{
-		while (i < dstsize)
-		{
-			dst[i] = src[c];
-			i++;
-		}
+		dst[lendst + i] = src[i];
+		i++;
 	}
-	dst[dstsize] = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
-}
-int	main()
-{
-	char		*dst;
-	const char 	*src;
-	size_t 		dstsize;
-
-	dst = "hola";
-	src = "cawita";
-	dstsize = 28;
-
-	printf("%i",ft_strlcat(dst, src, dstsize));
-	return(0);
+	dst[lendst + 1] = '\0';
+	return (lendst + lensrc);
 }
