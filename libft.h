@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/12 13:14:32 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:22:57 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <ctype.h>
 # include <string.h>
 # include <xlocale.h>
-# include <stddef.h>
 # include <stddef.h>
 
 /**
@@ -62,7 +61,7 @@ int		ft_isprint(int c);
  * @param str 
  * @return int 
  */
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 /**
  * @brief 
  * 
@@ -78,7 +77,14 @@ void	*ft_memset(void *str, int c, size_t len);
  * @param n 
  */
 void	ft_bzero(void *s, size_t n);
-
+/**
+ * @brief
+ * 
+ * @param dst 
+ * @param src 
+ * @param n 
+ * @return void* 
+ */
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 /**
  * @brief 
@@ -137,17 +143,56 @@ char	*ft_strchr(const char *s, int c);
  * @return char* 
  */
 char	*ft_strrchr(const char *s, int c);
-
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @param chr 
+ * @return char* 
+ */
 char	*ft_strrchr(const char *str, int chr);
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-
+/**
+ * @brief 
+ * 
+ * @param s1 
+ * @param s2 
+ * @param n 
+ * @return int 
+ */
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @param c 
+ * @param n 
+ * @return void* 
+ */
 void	*ft_memchr(const void *str, int c, size_t n);
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-
+/**
+ * @brief 
+ * 
+ * @param s1 
+ * @param s2 
+ * @param n 
+ * @return int 
+ */
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+/**
+ * @brief 
+ * 
+ * @param haystack 
+ * @param needle 
+ * @param n 
+ * @return char* 
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
-
-int	ft_atoi(const char *str);
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @return int 
+ */
+int		ft_atoi(const char *str);
 
 #endif

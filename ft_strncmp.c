@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:24:37 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/15 13:08:46 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/15 13:12:04 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/15 13:12:08 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z'))
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
+	size_t			i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n && ptr1[i] != '\0' && ptr2[i] != '\0')
+	{
+		if (ptr1[i] != ptr2[i])
+			return ((int)(ptr1[i] - ptr2[i]));
+		i++;
+	}
+	if (i < n)
+		return ((int)(ptr1[i] - ptr2[i]));
 	return (0);
 }

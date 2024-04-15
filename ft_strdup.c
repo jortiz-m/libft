@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 11:42:31 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/12 13:06:49 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/15 13:54:40 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/15 14:06:25 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_stlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strdup(const char *s1)
 {
+	size_t	s1len;
+	char	*str;
 	size_t	i;
-
+	
+	s1len = ft_strlen(s1);
+	str = (malloc((s1len + 1) * sizeof(char)));
 	i = 0;
-	if (n != 0)
+	while (s1[i] != '\0')
 	{
-		while (scr[i] != '\0' && i < dstsize - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		str[i] = s1[i]
+		i++;
 	}
-	return (ft_strlen(src));
+	return(str);
 }
