@@ -6,13 +6,13 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:10:13 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/15 13:22:30 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/16 09:52:01 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*lst;
 

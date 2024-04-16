@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:00:55 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/12 13:13:03 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/16 09:48:51 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		if (*str == c)
-			return ((char *) str);
+		if (*s == c)
+			return ((char *) s);
 	}
-	str++;
+	s++;
 	return (NULL);
 }

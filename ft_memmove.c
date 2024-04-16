@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 09:43:05 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/12 12:50:36 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:08:06 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (d > s)
 	{
-		while (len > 0)
-			d [len] = s [len];
+		while (len != 0)
+		{
+			len--;
+			d[len] = s[len];
+		}
 	}
-	while (i < len)
+	else
 	{
-		d[i] = s[i];
-		i++;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/15 13:22:57 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/16 09:52:58 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,14 +143,6 @@ char	*ft_strchr(const char *s, int c);
  * @return char* 
  */
 char	*ft_strrchr(const char *s, int c);
-/**
- * @brief 
- * 
- * @param str 
- * @param chr 
- * @return char* 
- */
-char	*ft_strrchr(const char *str, int chr);
 /**
  * @brief 
  * 
