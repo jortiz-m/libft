@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/16 09:52:58 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:27:04 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <xlocale.h>
 # include <stddef.h>
+# include <stdlib.h>
 
 /**
  * @brief 
@@ -186,5 +187,18 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
  * @return int 
  */
 int		ft_atoi(const char *str);
-
+/**
+ * @brief 
+ * 
+ */
+char	*ft_strdup(const char *s1);
+/**
+ * @brief 
+ * 
+ * @param s 
+ * @param start 
+ * @param len 
+ * @return char* 
+ */
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

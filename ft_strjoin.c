@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 13:54:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/17 09:19:41 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/17 11:51:42 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/17 12:49:41 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	s1len;
 	char	*str;
-	size_t	i;
+	int		i;
+	int		j;
+	char	lends3;
 
-	s1len = ft_strlen(s1);
-	str = (malloc((s1len + 1) * sizeof(char)));
+	lends3 = (ft_strlen(s1) + ft_strlen(s2));
+	str = (char  *)malloc ((lends3 + 1) * sizeof(char));
 	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	if (!str)
+		return (NULL);
 	while (s1[i] != '\0')
 	{
 		str[i] = s1[i];
 		i++;
 	}
+	while (s2[j] != '\0')
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	str[(i + j)] = '\0';
+	free (str);
 	return (str);
 }
