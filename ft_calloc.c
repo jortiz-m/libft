@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 12:00:55 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/16 09:48:51 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/15 13:38:56 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/15 13:54:09 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int chr)
+void	*calloc(size_t count, size_t size)
 {
-	int	i;
+	char	*str;
+	size_t	i;
 
+	str = (malloc(count * size));
 	i = 0;
-	while (str[i] != '\0')
+	while (i < (count * size))
 	{
-		if (str[i] == chr)
-			return ((char *)(str + i));
+		str[i] = '0';
 		i++;
 	}
-	return (NULL);
+	return (str);
 }

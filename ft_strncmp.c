@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 12:00:55 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/16 09:48:51 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/15 13:12:04 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/16 10:49:46 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int chr)
-{
-	int	i;
+#include "libft.h"
 
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
 	i = 0;
-	while (str[i] != '\0')
+	while (i < n && ptr1[i] != '\0' && ptr2[i] != '\0')
 	{
-		if (str[i] == chr)
-			return ((char *)(str + i));
+		if (ptr1[i] != ptr2[i])
+			return ((int)(ptr1[i] - ptr2[i]));
 		i++;
 	}
-	return (NULL);
+	if (i < n)
+		return ((int)(ptr1[i] - ptr2[i]));
+	return (0);
 }
