@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 11:09:16 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/18 11:09:23 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/18 13:13:18 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/18 13:23:10 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-	int	number;
-	int	neg;
+	int	num;
 
-	i = 0;
-	number = 0;
-	neg = 1;
-	while (str[i] == ' ')
-		i++;
-	if (str[i] == '-')
-	{
-		neg = neg * -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]) == 1)
-	{
-		number = number * 10 + (str[i] - '0');
-		i++;
-	}
-	return (number * neg);
+	num = n;
+	while ()
 }
+
+num = n % 10 + (n + '0')
+	n / 10
+while ()

@@ -6,11 +6,9 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:12:04 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/16 10:49:46 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:06:46 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -26,7 +24,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (i < n && ptr1[i] != '\0' && ptr2[i] != '\0')
 	{
 		if (ptr1[i] != ptr2[i])
-			return ((int)(ptr1[i] - ptr2[i]));
+		{
+			return ((int) ptr1[i] - ptr2[i]);
+		}
 		i++;
 	}
 	if (i < n)

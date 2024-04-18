@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:24:37 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/15 13:08:46 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:08:47 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,5 @@ int	ft_isalnum(int c)
 		return (1);
 	if (c >= 'A' && c <= 'Z')
 		return (1);
-	return (0);
-}
-int main()
-{
-	char c = 'a';
-	printf("%d\n", ft_isalnum(c));
 	return (0);
 }

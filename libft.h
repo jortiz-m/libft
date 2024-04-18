@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/17 12:27:04 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:05:27 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
  * @param dstsize 
  * @return size_t 
  */
-size_t	ft_stlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 /**
  * @brief 
  * 
@@ -201,4 +201,13 @@ char	*ft_strdup(const char *s1);
  * @return char* 
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+/**
+ * @brief 
+ * 
+ * @param s1 
+ * @param s2 
+ * @return char* 
+ */
+char	*ft_strjoin(char const *s1, char const *s2);
+
 #endif

@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 11:09:16 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/18 11:09:23 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/18 13:04:16 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/18 13:17:57 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	int	number;
-	int	neg;
 
 	i = 0;
-	number = 0;
-	neg = 1;
-	while (str[i] == ' ')
-		i++;
-	if (str[i] == '-')
+	while (s[i] != '\0')
 	{
-		neg = neg * -1;
+		write (fd, &s[i], 1);
 		i++;
 	}
-	while (ft_isdigit(str[i]) == 1)
-	{
-		number = number * 10 + (str[i] - '0');
-		i++;
-	}
-	return (number * neg);
+	write(fd, '\0', 1);
 }
