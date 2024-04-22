@@ -12,11 +12,21 @@
 
 #include "libc.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	while (s1[i] != )
-	while (set[j] != '\0' && set[j] != s1[i])
-	{
-		j++;
-	}
+	size_t	start;
+	size_t	finish;
+	char	*str;
+
+	if (s1 = '\0' || set = '\0')
+		return (NULL);
+	start = 0;
+	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
+		start++;
+	finish = ft_strlen(s1 + start);
+	while (ft_strchr(set, s1[start + finish]))
+		finish--;
+	if (!(str = ft_substr(s1, start, finish + 1)))
+		return (NULL);
+	return (str);
 }
