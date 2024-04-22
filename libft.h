@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/18 11:05:27 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:42:22 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n);
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
 /**
- * @brief 
+ * @brief
  * 
  * @param c 
  * @return int 
@@ -209,5 +209,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  * @return char* 
  */
 char	*ft_strjoin(char const *s1, char const *s2);
+/**
+ * @brief 
+ * 
+ * @param s1 
+ * @param set 
+ * @return char* 
+ */
+char	*ft_strtrim(char const *s1, char const *set);
+
+/**
+ * @brief 
+ * 
+ * @param n 
+ * @return char* 
+ */
+char	*ft_itoa(int n);
 
 #endif

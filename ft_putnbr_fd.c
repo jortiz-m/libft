@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:13:18 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/19 11:27:48 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:02:56 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
-		n = - n;
+		n = -n;
 	if (n >= 10)
 		ft_putnbr_fd(n / 10);
 	ft_putnbr(n / 10);

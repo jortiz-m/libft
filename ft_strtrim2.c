@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strrchr.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 13:12:19 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/15 13:12:22 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/22 12:27:34 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/22 12:59:35 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libc.h"
 
-char	*ft_strrchr(const char *str, int chr)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	strlenght;
-
-	strlenght = ft_strlen(str);
-	while (strlenght >= 0)
+	while (s1[i] != )
+	while (set[j] != '\0' && set[j] != s1[i])
 	{
-		if (str[strlenght] == chr)
-			return ((char *)(str + strlenght));
-		strlenght --;
+		j++;
 	}
-	return (NULL);
 }
