@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/22 09:42:22 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:39:50 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n);
  * @param c 
  * @return int 
  */
-int		ft_tuopper(int c);
+int		ft_toupper(int c);
 /**
  * @brief 
  * 
@@ -187,6 +187,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
  * @return int 
  */
 int		ft_atoi(const char *str);
+/**
+ * @brief 
+ * 
+ * @param count 
+ * @param size 
+ * @return void* 
+ */
+void	*ft_calloc(size_t count, size_t size);
 /**
  * @brief 
  * 

@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   strtrim.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 12:10:13 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/23 11:35:49 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/23 12:36:40 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/23 12:39:48 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int chr)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	strlenght;
+	size_t	i;
+	size_t	j;
+	char	*s2;
+	char	*start;
+	char	*finish;
 
-	strlenght = ft_strlen(str);
-	while (strlenght >= 0)
+	start = ft_strchr(s1, set, ft_strlen(s1));
+	finish = ft_strnstr(s1, set, ft_strlen(s1));
+	s2 = malloc(ft_strlen(s1) - ft_strlen(finish) * (sizeof(char)));
+	i = 0;
+	j = 0;
+	if (s2 == NULL)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		if (str[strlenght] == (char)chr)
-			return ((char *)(str + strlenght));
-		strlenght --;
+		if (i < start || i > finish)
+		{
+			s2[j] = s1[i];
+			j++;
+		}
+		i++;
 	}
-	return (NULL);
+	return (s2);
 }
+

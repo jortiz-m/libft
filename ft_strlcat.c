@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 09:50:09 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/16 12:14:47 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:33:58 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 		dst[lendst + i] = src[i];
 		i++;
 	}
-	dst[lendst + 1] = '\0';
+	dst[lendst + i] = '\0';
 	return (lendst + lensrc);
 }

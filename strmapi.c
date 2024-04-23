@@ -1,49 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   strmapi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 09:24:59 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/22 12:21:57 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/23 12:36:08 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/23 12:39:49 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	int		i;
+	unsigned int	i;
+	unsigned int	len;
+	char			*str;
 
-	str = (char *)malloc (sizeof(char) * 12);
-	if (!str)
+	i = 0;
+	str = (char *)malloc(ft_strlen(s) + 1);
+	if (!s || !f)
 		return (NULL);
-	if (n == 0)
+	len = ft_strlen(s);
+	if (!str)
+		return (0);
+	while (s[i] = '\0')
 	{
-		str[i] = '0';
+		str[i] = f(i, (char)s[i]);
 		i++;
 	}
-	if (n < 0)
-	{
-        is_negative = 1;
-        n = -n;
-	}
-	while (n != 0)
-	{
-        int digit = n % 10;
-        str[i++] = '0' + digit;
-        n /= 10;
-	}
-	if (is_negative)
-		str[i++] = '-';
-    (str[i] = '\0');
-    for (int j = 0; j < i / 2; j++)
-	{
-        char temp = str[j];
-        str[j] = str[i - j - 1];
-        str[i - j - 1] = temp;
-	}
+	str[i] = '\0';
 	return (str);
 }
+
