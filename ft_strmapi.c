@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strtrim.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 12:36:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/23 12:39:48 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/04/23 12:36:08 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/04/24 09:19:34 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	j;
-	char	*s2;
-	char	*start;
-	char	*finish;
+	unsigned int	i;
+	unsigned int	len;
+	char			*str;
 
-	start = ft_strchr(s1, set, ft_strlen(s1));
-	finish = ft_strnstr(s1, set, ft_strlen(s1));
-	s2 = malloc(ft_strlen(s1) - ft_strlen(finish) * (sizeof(char)));
 	i = 0;
-	j = 0;
-	if (s2 == NULL)
+	str = (char *)malloc(ft_strlen(s) + 1);
+	if (!s || !f)
 		return (NULL);
-	while (s1[i] != '\0')
+	len = ft_strlen(s);
+	if (!str)
+		return (0);
+	while (s[i] != '\0')
 	{
-		if (i < start || i > finish)
-		{
-			s2[j] = s1[i];
-			j++;
-		}
+		str[i] = f(i, (char)s[i]);
 		i++;
 	}
-	return (s2);
+	str[i] = '\0';
+	return (str);
 }
-

@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:27:34 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/23 10:22:35 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/24 09:42:07 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (start != finish && (ft_strchr(set, s1[finish - 1])) != NULL)
 		finish--;
-	return (ft_substr(s1, start, finish + 1));
+	return (ft_substr(s1, start, finish - start));
 }
