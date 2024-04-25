@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/24 10:30:12 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/25 09:55:34 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,6 +225,14 @@ char	*ft_strjoin(char const *s1, char const *s2);
  * @return char* 
  */
 char	*ft_strtrim(char const *s1, char const *set);
+/**
+ * @brief 
+ * 
+ * @param s 
+ * @param f 
+ * @return char* 
+ */
+char	*ft_itoa(int n);
 /**
  * @brief 
  * 
