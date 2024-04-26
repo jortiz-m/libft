@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/25 09:55:34 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:29:59 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,6 +229,14 @@ char	*ft_strtrim(char const *s1, char const *set);
  * @brief 
  * 
  * @param s 
+ * @param c 
+ * @return char** 
+ */
+char	**ft_split(char const *s, char c);
+/**
+ * @brief 
+ * 
+ * @param s 
  * @param f 
  * @return char* 
  */
@@ -241,6 +249,13 @@ char	*ft_itoa(int n);
  * @return char* 
  */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+/**
+ * @brief 
+ * 
+ * @param c 
+ * @param fd 
+ */
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 /**
  * @brief 
  * 
