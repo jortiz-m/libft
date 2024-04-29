@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/26 13:29:59 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/29 12:29:30 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,14 +232,6 @@ char	*ft_strtrim(char const *s1, char const *set);
  * @param c 
  * @return char** 
  */
-char	**ft_split(char const *s, char c);
-/**
- * @brief 
- * 
- * @param s 
- * @param f 
- * @return char* 
- */
 char	*ft_itoa(int n);
 /**
  * @brief 
@@ -284,4 +276,38 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd 
  */
 void	ft_putnbr_fd(int n, int fd);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+/**
+ * @brief 
+ * 
+ * @param content 
+ * @return t_list* 
+ */
+t_list	*ft_lstnew(void *content);
+/**
+ * @brief 
+ * 
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new);
+/**
+ * @brief 
+ * 
+ */
+int		ft_lstsize(t_list *lst);
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @return t_list* 
+ */
+t_list	*ft_lstlast(t_list *lst);
+/**
+ * @brief 
+ * 
+ */
+void	ft_lstadd_back(t_list **lst, t_list *new);
 #endif
