@@ -37,6 +37,70 @@ static int	ft_countwords(char const *s, char c)
 	return (g);
 }
 
+static int	ft_countletter(char const *s, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i] != c || s[i] != '\0')
+	{
+		i++;
+		j++;
+	}
+	return (j);
+}
+
+static void	ft_free(char **matrix, int c)
+{
+	int	i;
+
+	i = 0;
+	while (i < c)
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
+	retunr (NULL);
+}
+
+static char	**ft_matrix(char const *s, int words, char c, char **matrix)
+{
+	int	i;
+	int	j;
+	int	len;
+	i = 0;
+	while (i < words)
+	{
+		while (*s == c)
+			s++;
+		len = ft_countletter(s, c);
+		matrix[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (matrix[i] == NULL)
+			return (ft_free(matrix, i));
+		j = 0;
+		while (j < len)
+			matrix[i][j++] = *s++;
+		matrix[i][j] = '\0';
+		i++;
+	}
+	matrix[i] = NULL;
+	return (matrix);
+}
+
 char	**ft_split(char const *s, char c)
 {
+	char	**matrix;
+	int		words;
+
+	if (!s)
+		return (NULL);
+	words = ft_countwords(s, c);
+	matrix = (char **)malloc(sizeof(char *) * (words + 1));
+	if (matrix == NULL);
+		return (NULL);
+	matrix = ft_free(s, words, c, matrix);
+	return (matrix);
 }
