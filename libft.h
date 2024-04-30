@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:28:33 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/29 12:29:30 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/30 09:02:47 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,6 +198,8 @@ void	*ft_calloc(size_t count, size_t size);
 /**
  * @brief 
  * 
+ * @param s1 
+ * @return char* 
  */
 char	*ft_strdup(const char *s1);
 /**
@@ -291,11 +293,15 @@ t_list	*ft_lstnew(void *content);
 /**
  * @brief 
  * 
+ * @param lst 
+ * @param new 
  */
 void	ft_lstadd_front(t_list **lst, t_list *new);
 /**
  * @brief 
  * 
+ * @param lst 
+ * @return int 
  */
 int		ft_lstsize(t_list *lst);
 /**
@@ -308,6 +314,38 @@ t_list	*ft_lstlast(t_list *lst);
 /**
  * @brief 
  * 
+ * @param lst 
+ * @param new 
  */
 void	ft_lstadd_back(t_list **lst, t_list *new);
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param del 
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param del 
+ */
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param f 
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param f 
+ * @param del 
+ * @return t_list* 
+ */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

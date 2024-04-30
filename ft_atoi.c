@@ -6,13 +6,13 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:09:16 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/24 10:26:36 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:33:21 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_spaces(char c)
+static int	ft_spaces(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\r' \
 	|| c == '\v' || c == '\f' || c == ' ')
