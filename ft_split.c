@@ -6,73 +6,74 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:28:19 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/04/30 12:42:06 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:41:51 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countwords(char const *s, char c);
+static int	ft_countwords(const char *s, int c);
 static int	ft_countletter(char const *s, char c);
-static void	ft_free(char const *s, int c);
-static char	**ft_matrix(char const *s, int c);
+static void	*ft_free(char **matrix, int words);
+static char	**ft_fillmatrix(char const *s, int words, char c, char **matrix);
 
-static int	ft_countwords(char const *s, char c)
+static int	ft_countwords(const char *s, int c)
 {
 	int	i;
-	int	g;
+	int	clen;
 
 	i = 0;
-	g = 0;
+	clen = 0;
 	if (s == NULL || s[0] == '\0')
 		return (0);
-	while (s[i] == c)
-		i++;
-	while (s[i])
+	if (s[0] != c)
+		clen++;
+	while (s[i] != '\0')
 	{
-		if (s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c))
-			g++;
+		if (s[i] == c && s[i + 1] != '\0' && s[i + 1] != c)
+			clen++;
 		i++;
 	}
-	return (g);
+	return (clen);
 }
 
 static int	ft_countletter(char const *s, char c)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		size;
 
 	i = 0;
-	j = 0;
-	while (s[i] != c || s[i] != '\0')
+	size = 0;
+	while (s[i] != c && s[i] != '\0')
 	{
 		i++;
-		j++;
+		size++;
 	}
-	return (j);
+	return (size);
 }
 
-static void	ft_free(char **matrix, int c)
+static void	*ft_free(char **matrix, int clen)
 {
 	int	i;
 
 	i = 0;
-	while (i < c)
+	while (i < clen)
 	{
 		free(matrix[i]);
 		i++;
 	}
 	free(matrix);
-	retunr (NULL);
+	return (NULL);
 }
 
-static char	**ft_matrix(char const *s, int words, char c, char **matrix)
+static char	**ft_fillmatrix(char const *s, int clen, char c, char **matrix)
 {
-	int	i;
-	int	j;
-	int	len;
+	int		i;
+	int		j;
+	int		len;
+
 	i = 0;
-	while (i < words)
+	while (i < clen)
 	{
 		while (*s == c)
 			s++;
@@ -93,14 +94,14 @@ static char	**ft_matrix(char const *s, int words, char c, char **matrix)
 char	**ft_split(char const *s, char c)
 {
 	char	**matrix;
-	int		words;
+	int		clen;
 
 	if (!s)
 		return (NULL);
-	words = ft_countwords(s, c);
-	matrix = (char **)malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL);
+	clen = ft_countwords(s, c);
+	matrix = (char **)malloc(sizeof(char *) * (clen + 1));
+	if (matrix == NULL)
 		return (NULL);
-	matrix = ft_free(s, words, c, matrix);
+	matrix = ft_fillmatrix(s, clen, c, matrix);
 	return (matrix);
 }
